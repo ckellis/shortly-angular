@@ -3,19 +3,19 @@
   <nav class="navigation">
     <ul>
       <li>
-          <a class="selected" href="#/links">Links</a>
+          <a href="#/links">Links</a>
       </li>
        <li>
-          <a href="#/shorten">Shorten</a>
+          <a class="selected" href="#/shorten">Shorten</a>
       </li>
     </ul>
   </nav>
-  <form>
-    <input class='text' type='text' name='url'>
-    <input type='submit' value='Shorten'>
+  <form name="shortenForm" ng-submit='addLink()' novalidate>
+    <input class='text' type='url' name='link' ng-model='link.url'>
+    <button type='submit' ng-disabled='shortenForm.$invalid'>Add Link</button>
   </form>
-  <img class='spinner' src='/spiffygif_46x46.gif'>
-  <!-- <div class='message' ng-show="">Please enter a valid url.</div> -->
+  <img class='spinner' ng-show='waiting' src='assets/spiffygif_46x46.gif'>
+  <!-- <div class='message' ng-show='shortenForm.link.$error.url && shortenForm.$dirty'>Please enter a valid url.</div> -->
 </div>
 
 

@@ -4,6 +4,9 @@ angular.module('shortly.shorten', [])
   // Your code here
   $scope.link = {};
   $scope.addLink = function () {
-    Links.addOne($scope.link);
+    $scope.waiting = true;
+    Links.addOne($scope.link).then(function () {
+      $scope.waiting = false;
+    });
   };
 });
