@@ -142,8 +142,12 @@ input[type=url]:focus {
   display: none;
 }
 
-.creator .message {
+.message {
   clear: both;
+  font-weight: 400;
+  color: red;
+  padding-left: 10px;
+  font-size: 11px;
 }
 
 .search {
