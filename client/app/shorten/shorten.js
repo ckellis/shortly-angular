@@ -7,6 +7,7 @@ angular.module('shortly.shorten', [])
     $scope.waiting = true;
     Links.addOne($scope.link).then(function () {
       $scope.waiting = false;
+      $location.path('/links');
     });
   };
 });
